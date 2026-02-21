@@ -1,0 +1,17 @@
+{
+  "name": "My Portfolio",
+  "short_name": "Portfolio",
+  "description": "Full Stack MERN Developer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
