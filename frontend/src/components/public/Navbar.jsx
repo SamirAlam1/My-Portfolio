@@ -10,6 +10,7 @@ const navLinks = [
   { to: '/skills',    label: 'Skills',    icon: '🛠️' },
   { to: '/projects',  label: 'Projects',  icon: '💼' },
   { to: '/blog',      label: 'Blog',      icon: '📝' },
+  { to: '/gallery',   label: 'Gallery',   icon: '🖼️' },
   { to: '/contact',   label: 'Contact',   icon: '✉️' },
 ];
 
@@ -54,7 +55,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map(({ to, label }) => (
                 <Link key={to} to={to}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     location.pathname === to
                       ? 'gradient-text bg-violet-500/10'
                       : isDark
@@ -70,13 +71,9 @@ const Navbar = () => {
             {/* Mobile: Theme + Hamburger */}
             <div className="flex items-center gap-2 md:hidden">
               <ThemeToggle />
-              <button
-                onClick={() => setIsOpen(true)}
-                aria-label="Open menu"
+              <button onClick={() => setIsOpen(true)} aria-label="Open menu"
                 className={`p-2 rounded-xl transition-colors ${
-                  isDark
-                    ? 'text-gray-400 hover:text-violet-300 hover:bg-violet-500/10'
-                    : 'text-gray-600 hover:text-violet-700 hover:bg-violet-50'
+                  isDark ? 'text-gray-400 hover:text-violet-300 hover:bg-violet-500/10' : 'text-gray-600 hover:text-violet-700 hover:bg-violet-50'
                 }`}>
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -87,25 +84,20 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* ── Mobile Drawer ────────────────────────── */}
-
-      {/* Backdrop — only dims, does NOT cover full screen */}
-      <div
-        onClick={() => setIsOpen(false)}
+      {/* ── Mobile Backdrop ──────────────────────── */}
+      <div onClick={() => setIsOpen(false)}
         className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(2px)' }}
       />
 
-      {/* Drawer — slides in from LEFT */}
+      {/* ── Left Drawer ──────────────────────────── */}
       <div className={`fixed top-0 left-0 z-50 h-full w-72 md:hidden transition-transform duration-300 ease-in-out ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
         style={{
-          background: isDark
-            ? 'linear-gradient(160deg, #0f0f23 0%, #16162e 100%)'
-            : 'linear-gradient(160deg, #ffffff 0%, #f5f3ff 100%)',
+          background: isDark ? 'linear-gradient(160deg, #0f0f23 0%, #16162e 100%)' : 'linear-gradient(160deg, #ffffff 0%, #f5f3ff 100%)',
           boxShadow: isOpen ? '8px 0 40px rgba(124,58,237,0.2)' : 'none',
           borderRight: isDark ? '1px solid rgba(124,58,237,0.15)' : '1px solid rgba(124,58,237,0.2)',
         }}>
@@ -115,9 +107,7 @@ const Navbar = () => {
           isDark ? 'border-violet-500/10' : 'border-violet-100'
         }`}>
           <span className="font-mono font-bold gradient-text">&lt;Samir Alam /&gt;</span>
-          <button
-            onClick={() => setIsOpen(false)}
-            aria-label="Close menu"
+          <button onClick={() => setIsOpen(false)} aria-label="Close menu"
             className={`p-2 rounded-xl transition-colors ${
               isDark ? 'text-gray-400 hover:text-white hover:bg-violet-500/10' : 'text-gray-500 hover:text-gray-900 hover:bg-violet-50'
             }`}>
@@ -130,9 +120,7 @@ const Navbar = () => {
         {/* Nav Links */}
         <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
           {navLinks.map(({ to, label, icon }) => (
-            <Link
-              key={to}
-              to={to}
+            <Link key={to} to={to}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
                 location.pathname === to
                   ? isDark
@@ -144,26 +132,18 @@ const Navbar = () => {
               }`}>
               <span className="text-lg">{icon}</span>
               <span>{label}</span>
-              {location.pathname === to && (
-                <span className="ml-auto w-1.5 h-1.5 rounded-full bg-violet-500" />
-              )}
+              {location.pathname === to && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-violet-500" />}
             </Link>
           ))}
         </nav>
 
         {/* Drawer Footer */}
-        <div className={`px-4 py-5 border-t space-y-3 ${isDark ? 'border-violet-500/10' : 'border-violet-100'}`}>
-          <a href="https://github.com" target="_blank" rel="noreferrer"
+        <div className={`px-4 py-5 border-t space-y-1 ${isDark ? 'border-violet-500/10' : 'border-violet-100'}`}>
+          <a href="https://github.com/sa0409716" target="_blank" rel="noreferrer"
             className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors text-sm ${
               isDark ? 'text-gray-500 hover:text-violet-300 hover:bg-violet-500/10' : 'text-gray-400 hover:text-violet-700 hover:bg-violet-50'
             }`}>
             🐙 <span>GitHub</span>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"
-            className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors text-sm ${
-              isDark ? 'text-gray-500 hover:text-violet-300 hover:bg-violet-500/10' : 'text-gray-400 hover:text-violet-700 hover:bg-violet-50'
-            }`}>
-            💼 <span>LinkedIn</span>
           </a>
           <Link to="/admin/login"
             className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors text-sm ${

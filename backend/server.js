@@ -44,6 +44,7 @@ app.use('/api/projects',  require('./routes/projects'));
 app.use('/api/skills',    require('./routes/skills'));
 app.use('/api/education', require('./routes/education'));
 app.use('/api/blogs',     require('./routes/blogs'));
+app.use('/api/gallery',     require('./routes/gallery'));
 app.use('/api/messages',  require('./routes/messages'));
 
 app.get('/api/health', (req, res) => {

@@ -5,151 +5,124 @@ const About = () => {
 
   const infoItems = [
     { label: "Location", value: "Ankleshwar, Gujarat, India", icon: "📍" },
-    { label: "Experience", value: "0 Years (Student)", icon: "💼" },
-    { label: "Availability", value: "Open to work", icon: "✅" },
-    { label: "Languages", value: "English, Hindi", icon: "🌐" },
+    { label: "Education", value: "IT Undergraduate", icon: "🎓" },
+    { label: "Experience", value: "1+ Years Learning", icon: "💼" },
+    { label: "Availability", value: "Open to Work", icon: "✅" },
   ];
 
   return (
     <main className="min-h-screen pt-24 pb-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12 animate-fade-in">
-          <h1 className="section-title">About Me</h1>
-          <p className="section-subtitle">A little bit about who I am</p>
+      <div className="max-w-6xl mx-auto">
+
+        {/* ───── Heading ───── */}
+        <div className="text-center mb-16">
+          <h1
+            className={`text-4xl md:text-5xl font-bold mb-4 ${
+              isDark ? "text-white" : "text-gray-900"
+            }`}
+          >
+            About Me
+          </h1>
+          <p
+            className={`max-w-2xl mx-auto ${
+              isDark ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
+            Full Stack MERN Developer passionate about building scalable,
+            user-friendly and high-performance web applications.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* ── Avatar ─────────────────────────────── */}
-          <div className="animate-slide-up flex justify-center">
+        {/* ───── Two Column Layout ───── */}
+        <div className="flex flex-col md:flex-row items-center gap-12">
+
+          {/* ─── Circular Profile Image ─── */}
+          <div className="flex justify-center md:w-1/2">
             <div className="relative">
-              {/* Image box */}
-              <div
-                className={`w-72 h-72 rounded-3xl overflow-hidden border-2 ${
-                  isDark ? "border-violet-500/30" : "border-violet-200"
-                }`}
-                style={{
-                  boxShadow: isDark
-                    ? "0 0 60px rgba(124,58,237,0.2)"
-                    : "0 0 60px rgba(124,58,237,0.1)",
-                }}
-              >
+              
+              {/* Gradient Ring (Professional Look) */}
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400 blur-sm opacity-40"></div>
+
+              {/* Image Container */}
+              <div className="relative w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-xl">
                 <img
                   src="/avatar.jpg"
-                  alt="Samir"
+                  alt="Samir Alam"
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
-                    // Fallback to emoji if image not found
                     e.target.style.display = "none";
-                    e.target.parentElement.classList.add(
-                      "flex",
-                      "items-center",
-                      "justify-center",
-                      "text-8xl",
-                    );
-                    e.target.parentElement.innerHTML = "👨‍💻";
+                    e.target.parentElement.innerHTML =
+                      '<div class="w-full h-full flex items-center justify-center text-7xl">👨‍💻</div>';
                   }}
                 />
               </div>
 
-              {/* Floating badge */}
-              <div
-                className={`absolute -bottom-4 -right-4 card px-4 py-3 text-sm ${isDark ? "" : "shadow-lg"}`}
-              >
-                <p
-                  className={`text-xs ${isDark ? "text-gray-500" : "text-gray-400"}`}
-                >
-                  Currently on
-                </p>
-                <p className="font-bold gradient-text">Portfolio CMS 🚀</p>
-              </div>
-
-              {/* Decorative dots */}
-              <div
-                className="absolute -top-4 -left-4 w-8 h-8 rounded-full"
-                style={{
-                  background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
-                }}
-              />
-              <div
-                className="absolute -top-2 -left-2 w-4 h-4 rounded-full opacity-50"
-                style={{
-                  background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
-                }}
-              />
             </div>
           </div>
 
-          {/* ── Bio ────────────────────────────────── */}
-          <div className="space-y-5 animate-fade-in">
-            <p
-              className={`text-lg leading-relaxed ${isDark ? "text-gray-300" : "text-gray-700"}`}
+          {/* ─── Bio Content ─── */}
+          <div className="md:w-1/2 space-y-6 text-center md:text-left">
+            <h2
+              className={`text-2xl font-semibold ${
+                isDark ? "text-white" : "text-gray-900"
+              }`}
             >
-              Hey there! I'm Samir Alam a passionate{" "}
-              <span className="gradient-text font-bold">
-                Full Stack MERN Developer
-              </span>{" "}
-              and IT undergraduate who enjoys building modern, scalable web
-              applications.
-            </p>
+              Hi, I'm <span className="text-violet-500">Samir Alam</span>
+            </h2>
+
             <p
-              className={`leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600"}`}
+              className={`leading-relaxed ${
+                isDark ? "text-gray-400" : "text-gray-600"
+              }`}
             >
-              I love transforming ideas into clean, user-friendly digital
-              experiences while continuously learning and improving through
-              hands-on projects.
-            </p>
-            <p
-              className={`leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600"}`}
-            >
-              When I'm not coding, you'll find me contributing to open source,
-              writing tech articles, or exploring new hiking trails.
+              I am a Full Stack WEB Developer (MERN) and IT undergraduate who enjoys
+              transforming ideas into scalable, high-performance web applications.
+              I focus on writing clean, maintainable code and delivering meaningful
+              digital experiences.
             </p>
 
-            {/* Info Grid */}
-            <div className="grid grid-cols-2 gap-3 pt-2">
-              {infoItems.map(({ label, value, icon }) => (
-                <div
-                  key={label}
-                  className={`rounded-xl p-4 border transition-all ${
-                    isDark
-                      ? "bg-[#16162e]/60 border-violet-500/10 hover:border-violet-500/30"
-                      : "bg-violet-50/60 border-violet-200 hover:border-violet-400"
-                  }`}
-                >
-                  <p
-                    className={`text-xs uppercase tracking-wide mb-1 ${isDark ? "text-gray-500" : "text-gray-400"}`}
-                  >
-                    {icon} {label}
-                  </p>
-                  <p
-                    className={`font-semibold text-sm ${isDark ? "text-gray-200" : "text-gray-800"}`}
-                  >
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex gap-4 pt-2">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary"
-              >
-                🐙 GitHub
-              </a>
-              {/* <a href="#" className="btn-secondary">📄 Download CV</a> */}
-              <a
-                href="/resume.pdf"
-                download="Resume.pdf"
-                className="btn-secondary"
-              >
-                📄 Download CV
-              </a>
-            </div>
+            <p
+              className={`leading-relaxed ${
+                isDark ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              My expertise includes React, Node.js, Express, MongoDB, and
+              Tailwind CSS. I continuously explore new technologies and improve
+              my problem-solving skills through real-world projects.
+            </p>
           </div>
         </div>
+
+        {/* ───── Info Grid ───── */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+          {infoItems.map(({ label, value, icon }) => (
+            <div
+              key={label}
+              className={`rounded-xl p-6 text-center border transition ${
+                isDark
+                  ? "bg-[#16162e]/60 border-violet-500/20"
+                  : "bg-white border-gray-200 shadow-sm"
+              }`}
+            >
+              <p className="text-2xl mb-2">{icon}</p>
+              <p
+                className={`text-xs uppercase tracking-wide mb-1 ${
+                  isDark ? "text-gray-500" : "text-gray-400"
+                }`}
+              >
+                {label}
+              </p>
+              <p
+                className={`font-semibold ${
+                  isDark ? "text-gray-200" : "text-gray-800"
+                }`}
+              >
+                {value}
+              </p>
+            </div>
+          ))}
+        </div>
+
       </div>
     </main>
   );

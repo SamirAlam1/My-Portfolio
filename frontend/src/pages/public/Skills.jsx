@@ -46,7 +46,7 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <h1 className="section-title">Skills</h1>
-          <p className="section-subtitle">Technologies and tools I work with</p>
+          <p className="section-subtitle">Technologies and tools that I know and work with ....</p>
         </div>
 
         {loading ? <LoadingSpinner size="lg" className="py-20" /> :
