@@ -188,7 +188,7 @@ const Gallery = () => {
                   <p className="text-5xl mb-4">📷</p>
                   <p className={`font-semibold mb-1 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>No Photos Yet</p>
                   <p className={`text-sm ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>
-                    Admin Panel → Gallery → Add Image se photos add karo
+                    Admin Panel → Gallery → Add Image
                   </p>
                 </div>
               ) : (
