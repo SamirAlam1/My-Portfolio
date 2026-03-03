@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import API from '../../utils/api';
 
-const LEETCODE_USERNAME = 'samir_alam';
+const LEETCODE_USERNAME = 'SamirAlam1';
 const CV_URL = '/Resume.pdf';
 
 const Gallery = () => {
